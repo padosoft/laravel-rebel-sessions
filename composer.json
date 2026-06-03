@@ -1,6 +1,6 @@
 {
   "name": "padosoft/laravel-rebel-sessions",
-  "description": "Device/session model per Laravel Rebel: registry, log-out-everywhere, refresh rotation + reuse detection, device trust.",
+  "description": "Device/session registry for Laravel Rebel: session/device tracking, logout-everywhere, refresh-token rotation with reuse detection, and device trust. Part of padosoft/laravel-rebel-*.",
   "license": "MIT",
   "keywords": [
     "laravel",
@@ -51,7 +51,12 @@
   "scripts": {
     "test": "pest",
     "phpstan": "phpstan analyse --memory-limit=512M",
-    "pint": "pint"
+    "pint": "pint",
+    "check": [
+      "pint --test",
+      "@phpstan",
+      "@test"
+    ]
   },
   "config": {
     "sort-packages": true,
