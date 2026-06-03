@@ -69,18 +69,21 @@ Depends on [`padosoft/laravel-rebel-core`](https://github.com/padosoft/laravel-r
 
 ## Rebel Sessions vs the alternatives
 
-| Capability | **Rebel Sessions** | Sanctum / Passport (native) | Hand-rolled |
-|---|:---:|:---:|:---:|
-| Refresh-token rotation | ✅ | ➖ (Passport rotates, Sanctum has no refresh) | ❌ |
-| **Reuse detection** (theft signal) | ✅ | ❌ | ❌ |
-| Burns the **whole chain/user** on reuse | ✅ | ❌ | ❌ |
-| Owner + expiry enforced on rotate | ✅ | ➖ | ❌ |
-| Race-safe (chain-root locking) | ✅ | ❌ | ❌ |
-| Logout-everywhere | ✅ | ➖ | ➖ |
-| Remembered-device trust | ✅ | ❌ | ❌ |
-| Multi-tenant + audit-friendly | ✅ | ❌ | ❌ |
+| Capability | **Rebel Sessions** | Shopify | Sanctum / Passport (native) | Hand-rolled |
+|---|:---:|:---:|:---:|:---:|
+| Refresh-token rotation you control | ✅ | ❌ | ➖ (Passport rotates, Sanctum has no refresh) | ❌ |
+| **Reuse detection** (theft signal) | ✅ | ❌ | ❌ | ❌ |
+| Burns the **whole chain/user** on reuse | ✅ | ❌ | ❌ | ❌ |
+| Owner + expiry enforced on rotate | ✅ | ➖ | ➖ | ❌ |
+| Race-safe (chain-root locking) | ✅ | ❌ | ❌ | ❌ |
+| Programmatic logout-everywhere API | ✅ | ➖ | ➖ | ➖ |
+| Customer-facing login activity / logout | ✅ | ✅ | ❌ | ❌ |
+| Remembered-device trust API | ✅ | ➖ | ❌ | ❌ |
+| Multi-tenant + audit-friendly (your app) | ✅ | ❌ | ❌ | ❌ |
 
-> Legend: ✅ built-in · ➖ partial · ❌ not available.
+> Legend: ✅ built-in · ➖ partial / hosted-only / not exposed to you · ❌ not available.
+>
+> Note: Shopify is a hosted, closed commerce platform — it manages its own customer sessions and shows shoppers a "logged-in devices" view, but never exposes refresh-token rotation, reuse detection, or a device-trust API you can self-host or build on.
 
 ---
 
