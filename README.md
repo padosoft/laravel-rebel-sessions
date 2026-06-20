@@ -1,5 +1,8 @@
 # Laravel Rebel — Sessions
 
+> Official documentation: https://doc.laravel-rebel.padosoft.com
+
+
 > **Refresh-token rotation with reuse detection, logout-everywhere, and device trust.** When a stolen refresh token is replayed, Rebel detects the reuse and **burns the whole session — every token of that user** — instead of silently handing the attacker a fresh one. Plus remembered-device trust to cut step-up friction. Part of the `padosoft/laravel-rebel-*` suite.
 
 <p align="center">
@@ -192,3 +195,4 @@ composer pint      # code style
 ```
 
 **License:** MIT — see [LICENSE](LICENSE). Part of the [`padosoft/laravel-rebel`](https://github.com/padosoft) suite.
+
